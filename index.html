@@ -10,19 +10,23 @@
 
 </head>
 <body class="bg-amber-50 bg-opacity-50">
+  <!-- nav starts -->
   <nav class="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0 container mx-auto mt-10">
     <div>
       <img src="images/Logo.png" alt="" class="btn bg-[#25252533] hover:bg-[#fff] hover:border-[#FF1F3D]">
     </div>
   <div>
-    <button id="sort-by-view" class="btn bg-[#25252533] hover:text-[#FF1F3D] hover:border-[#FF1F3D] hover:bg-white">Sort by view</button>
+    <button id="sort-by-view" class="btn bg-[#25252533] hover:text-[#FF1F3D] hover:border-[#FF1F3D] hover:bg-white lg:-ml-28">Sort by view</button>
   </div> 
   <div>
-    <button class="btn bg-[#FF1F3D] text-white border-[#FF1F3D] hover:text-[#FF1F3D] hover:border-[#FF1F3D] hover:bg-white px-6">Blog</button>
+    <a href='/blog.html' target='_blank'>
+    <button class="btn bg-[#FF1F3D] text-white border-[#FF1F3D] hover:text-[#FF1F3D] hover:border-[#FF1F3D] hover:bg-white px-6">Blog</button></a>
   </div>   
   </nav>
   <hr class="bg-[#17171733] my-5">
-  
+  <!-- nav ends -->
+
+  <!-- main starts -->
     <main class="container mx-auto mt-10">
       <section class="flex justify-center gap-5" id="allButtons">
         <div>
@@ -37,19 +41,18 @@
         <div>
           <button class="btn" id="Drawing" onclick="loadCategory('Drawing')">Drawing</button>
         </div>
-
       </section>
-
+      
       <section class="my-20 text-center hidden" id="loading-data">
-        <span class="loading loading-spinner loading-lg text-[violet]"></span>
+      <span class="loading loading-spinner loading-lg text-[violet]"></span>
 
       </section>
 
       <section id="card-container">
 
       </section>
-   
     </main>
+    <!-- main ends -->
 <!-- adding javascript file from here  -->
      <script src="/script/index.js"></script>
      <script src="/script/data.js"></script>

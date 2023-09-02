@@ -15,25 +15,26 @@ const displayAllCards = (sortByView = false, items=fetchedTools) =>{
             });
         }
         console.log(remakeItems);
-        remakeItems.forEach(item => {
+        remakeItems.forEach((item) => {
         console.log(item);
+
+        // convert time
+        let seconds = parseFloat(item.others.posted_date);
+        let hours = parseInt(seconds/3600);
+        let minutes = parseInt(parseInt(seconds%3600)/60);
+        const time= hours + 'hrs ' + minutes+' min ago';
         const cardItems = document.createElement('div');
         cardItems.classList = `w-full h-[500px]`;
         cardItems.innerHTML = `
         <figure class="w-full">
         <img src="${item.thumbnail}" alt="" class="rounded-lg w-full h-60">
         </figure>
-
-        <div class="absolute p-2 -mt-6 bg-black bg-opacity-80 flex flex-end text-[#FFF] text-center">
-        ${item.others.posted_date === ""? '${item.others.posted_date}': ''}
-       </div>
-
+        <div class="flex justify-end">${item.others.posted_date ?`<p class="absolute -mt-11 p-2 bg-black bg-opacity-80 text-white text-center rounded-2xl">${time}</p>`: ''}</div>
        <div class="flex px-5 pt-5 gap-5">
       <img src="${item.authors[0].profile_picture}" alt="" class="rounded-full w-12 h-12">
-
      <div>
      <h2 class="card-title">${item.title}</h2>
-    <p class="flex gap-3 text-[gray]">
+    <p class="flex gap-3 text-gray-950">
     ${item.authors[0].profile_name} ${item.authors[0].verified === true ? '<img class="w-[10%]" src="images/verified.png"': ''}
     </p>
     <p> ${item.others.views} views</p>

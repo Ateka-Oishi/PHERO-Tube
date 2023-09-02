@@ -1,11 +1,12 @@
+// loading category from api
 const loadCategory = async(category="All") => {
   const callButton = document.getElementById(category);
   const allButtons = document.querySelectorAll("#allButtons button");
   allButtons.forEach(buttons =>{
-    buttons.classList.remove('btn-error');
+    buttons.classList.remove('bg-[#FF1F3D]', 'text-white', 'hover:bg-[#FF1F3D]', 'hover:text-white');
   });
 
-  callButton.classList = `btn btn-error`;
+  callButton.classList = `btn bg-[#FF1F3D] hover:bg-[#FF1F3D] hover:text-white text-white`;
   const response = await fetch
         (`https://openapi.programming-hero.com/api/videos/categories`);
   const data = await response.json();
@@ -16,8 +17,8 @@ const loadCategory = async(category="All") => {
       break;
     }
   }
-  console.log(category);
-  console.log(categoryId);
+  // console.log(category);
+  // console.log(categoryId);
   loadVideo(categoryId);
 
 }
