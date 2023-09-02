@@ -37,10 +37,10 @@ const loadVideo = async(categoryId) => {
   loadingData.classList.add('hidden');
 }
 
-
-
 loadCategory();
 //loadVideo();
+
+
 
 
 
